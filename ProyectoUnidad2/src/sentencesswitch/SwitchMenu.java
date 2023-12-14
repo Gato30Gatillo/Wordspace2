@@ -5,20 +5,22 @@ import java.util.Scanner;
 public class SwitchMenu {
 	public static void main(String[] args) {
 
-		int opcionNumero; 
+		int opcionNumero=0; 
 		double medida; 
 		double pulgadas; 
 
 		Scanner sc = new Scanner(System.in);
-
+		while(opcionNumero != 5) {
+			
 		System.out.println("Que unidad de medida vas a usar?");
 		System.out.println();
 		System.out.println(" 1. pulgadas");
 		System.out.println(" 2. pies");
 		System.out.println(" 3. yardas");
 		System.out.println(" 4. millas");
+		System.out.println(" 5. salir");
 		System.out.println();
-		System.out.println("Introduce el numero seleccionado entre 1 y 4: ");
+		System.out.println("Introduce el numero seleccionado entre 1 y 5: ");
 		opcionNumero = sc.nextInt();
 		
 		switch (opcionNumero) {
@@ -44,7 +46,10 @@ public class SwitchMenu {
 			System.out.println("Introduce el número de millas: ");
 			medida = sc.nextDouble();
 			pulgadas = medida * 63360;
-			System.out.println("La conversión a pulgadas es: " + pulgadas);			
+			System.out.println("La conversión a pulgadas es: " + pulgadas);
+		case 5:
+			System.out.println("salimos del programa");
+			break;
 		default: 
 			System.out.println("No ha introdución una opción contemplada en el menú");
 			break;
@@ -54,4 +59,5 @@ public class SwitchMenu {
       System.out.println("Fuera del switch");
 	}
 
+}
 }

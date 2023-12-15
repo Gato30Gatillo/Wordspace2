@@ -6,6 +6,7 @@ public class InvertNumber {
 	
 	public static String reverted(int aux) {
 		String inverted="";
+		
 		while (aux>0) {
 		inverted=inverted+(aux%10);
 		aux=aux/10;
@@ -13,23 +14,39 @@ public class InvertNumber {
 		return inverted;
 		
 	}
-	
+	public static String delete(int aux,int eliminar) {
+		String delete="";
+		int cont=1;
+		while (aux>0) {
+			if(eliminar!=cont){
+				delete=(aux%10)+delete;
+			}
+			aux=aux/10;
+			cont++;
+	}
+		return delete;
+		
+	}
 	
 	public static void main(String[] args) {
 		// first i would ask for a number and create a string to get the number in inverse orden them
 		//we also should create a auxiliary and them do a bucle in witch we get the last number and put it in the string
 		//the bucle stop when the number only has units
 		
-		int num,aux=0;
+		int num,aux=0,eliminar;
 		String inverted="";
+		String delete="";
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("give me a number");
 		num= sc.nextInt();
+		System.out.println("give me the position of the number you wish to delete");
+		eliminar= sc.nextInt();
 		aux=num; 
 		inverted=reverted(aux);
-		
-		System.out.print(num+" inverted is "+inverted);
+		System.out.println(num+" inverted is "+inverted);
+		delete=delete(aux,eliminar);
+		System.out.println(num+" without the position "+eliminar+" is "+delete);
 		
 	}
 

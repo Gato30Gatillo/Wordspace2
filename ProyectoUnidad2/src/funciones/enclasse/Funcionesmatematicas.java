@@ -2,7 +2,7 @@ package funciones.enclasse;
 
 import java.util.Scanner;
 
-public class InvertNumber {
+public class Funcionesmatematicas {
 	
 	public static String reverted(int aux) {
 		String inverted="";

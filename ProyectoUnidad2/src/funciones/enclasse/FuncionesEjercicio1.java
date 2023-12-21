@@ -100,7 +100,7 @@ public class FuncionesEjercicio1 {
 	cont=0;
 	System.out.println("tienes 3 intentos");
 
-	while((!usuario.equals("usuario1")&&!contraseña.equals("asdasd"))&& cont<=3) {
+	while((!usuario.equals("usuario1")&&!contraseña.equals("asdasd"))&& cont<3) {
 		System.out.println("introduce un usuario");
 		usuario= sc.next();
 		System.out.println("introuce una contraseña");

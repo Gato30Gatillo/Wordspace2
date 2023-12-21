@@ -28,6 +28,40 @@ public class Funcionesmatematicas {
 		
 	}
 	
+	public static int countdigit(int num) {
+		int digitCounter=0;
+		
+		while(num>0) {
+			digitCounter++;
+			num/=10;
+		}
+		return digitCounter;
+	}
+	
+	public static int deleteNDigit(int num, int N) {
+
+		int cifra,exponente=0, contPosicion=1,numRes=0;
+		
+		while (num>0) {
+			
+			if (contPosicion!=N) {
+				
+				cifra=num%10;
+				numRes= numRes +  cifra* (int) Math.pow(10, exponente);
+				exponente++;
+				
+				
+			} 
+			contPosicion++;	
+			num=num/10;
+			
+		}
+		
+		return numRes;
+		
+		
+	}
+	
 	public static void main(String[] args) {
 		// first i would ask for a number and create a string to get the number in inverse orden them
 		//we also should create a auxiliary and them do a bucle in witch we get the last number and put it in the string

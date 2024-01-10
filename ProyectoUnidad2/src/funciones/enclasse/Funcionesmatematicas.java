@@ -100,9 +100,10 @@ public class Funcionesmatematicas {
 				}
 			}
 		if (primo==true&&contar!=cantidad) {
-		lista= lista+i;
+		lista= lista+i+",";
 		contar++;
 		}
+		primo=true;
 	}
 		return lista;
 	}
@@ -117,8 +118,9 @@ public class Funcionesmatematicas {
 				}
 			}
 		if (primo==true) {
-		lista= lista+i;
+		lista= lista+i+",";
 		}
+		primo=true;
 	}
 		return lista;
 	}
@@ -171,9 +173,9 @@ public class Funcionesmatematicas {
 		}
 		
 		for(int i=0;i<veces;i++) {
-		digit = number%10;
-		result= (int) (digit*Math.pow(10, numdigits-1));
-		number=number/10;
+		digit = (int) (number/Math.pow(10, numdigits-1));
+		result= (int) (digit);
+		number=(int) (number%Math.pow(10, numdigits-1))*10;
 		result=result+number;
 		number=result;
 		}
@@ -208,8 +210,10 @@ public class Funcionesmatematicas {
 	num2= sc.nextInt();
 	System.out.println(RotarALaDerecha( num1));
 	System.out.println(RotarNVecesALaDerecha( num1,num2));
-	
-	
+	System.out.println(RotarNVecesALaIzquierda( num1,num2));
+	System.out.println(nprimelist( 1,100,3));
+	System.out.println(rangedprimelist( 1,89));
+
 
 }
 }

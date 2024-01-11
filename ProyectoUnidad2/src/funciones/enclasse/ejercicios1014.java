@@ -50,7 +50,7 @@ public class ejercicios1014 {
 		int horas=minutos/60;
 		segundos=segundos%60;
 		minutos=minutos%60;
-		return horas+"horas, "+minutos+"minutos, "+segundos+"segundos.";
+		return horas+" horas, "+minutos+" minutos, "+segundos+" segundos.";
 	}
 	
 	public static void main(String[] args) {
@@ -68,7 +68,7 @@ public class ejercicios1014 {
 		System.out.println(pegarpordetras(num,n));
 		System.out.println(pegarpordelante(num,n));
 		System.out.println(trozodenumero(num,n,num1));
-		System.out.println(calcularsegundos(34,51,23));
+		System.out.println(calcularsegundos(34,51,23)+" segundos");
 		System.out.println(calcularhoras(714960));
 	}
 

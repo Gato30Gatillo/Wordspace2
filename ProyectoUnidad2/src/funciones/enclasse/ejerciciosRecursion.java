@@ -115,27 +115,29 @@ public class ejerciciosRecursion {
 			return 1;
 		}
 		else if(n==1) {
-			return terminoFibonacchi(n-1);
+			return 1;
 		}
 		else {
 			return terminoFibonacchi(n-1)+terminoFibonacchi(n-2);
 		}
 	}
 	
-	 private static int terminoFibonacchiAux(int n) {
-		if (n==0) {
-			return 1;
-		}
-		else if(n==1) {
-			return terminoFibonacchi(n-1);
+	 private static int terminoFibonacchiAux(int n,int an_2,int an_1) {
+		
+		 int an_2aux, an_1aux;
+		 
+		 if (n==0) {
+			return an_2+an_1;
 		}
 		else {
-			return terminoFibonacchi(n-1)+terminoFibonacchi(n-2);
+			an_2aux = an_2+an_1;
+			an_1aux=an_2;
+			return terminoFibonacchiAux(n-1,an_2aux,an_1aux);
 		}
 	}
 	
 	public static int terminoFibonacchiMejorado(int n) {
-		return terminoFibonacchiAux(1);
+		return terminoFibonacchiAux(n,1,1);
 	}
 	
 	

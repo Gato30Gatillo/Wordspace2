@@ -184,6 +184,73 @@ public class Funcionesmatematicas {
 		return result;
 	}
 	
+	static double factorial(double numfactorial) {
+		double resultadofactorial=1;
+		for (double i=1;i<=numfactorial;i++) {
+			resultadofactorial*=i;
+		}
+		
+		return resultadofactorial;
+}
+	
+	static long factorialDeCola(long n, long acumulador) {
+		if (n==0) {
+			return acumulador;
+		}
+		else {
+			return factorialDeCola(n-1,n*acumulador);
+		}
+	}
+	
+	static double potencia(double base,double exponente) {
+		return Math.pow(base, exponente);
+	}
+	
+	static double nTerminoSen(double x,double n) {
+		double signo=1;
+		signo=n%2;
+		return potencia(x,2*n+1)/ factorial(2*n+1)*potencia(-1,signo);
+	}
+	
+	static double funcionE (double x,double precision) {
+		double resultado=0;
+		
+		for (double i=0;i<=precision;i++) {
+		resultado=resultado+ nTerminoSen(x,i); //(potencia(x,i)/factorial(i));	
+		}
+		
+		return resultado;
+	}
+	
+	private static int MCD(int a, int b) {
+		
+		
+		if (a==0) {
+			 
+			return a;
+		 
+		}
+		 else {
+			 return MCD (b,a%b);	 
+		 }
+		
+	}
+	
+	
+	public static int MCDMejorado(int a,int b) {
+		if(a>=b) {
+		return MCD(a,b);
+	}
+		else {
+			return MCD(b,a);
+		}
+	}
+	
+	private static int MCM(int a, int b) {
+		
+		return a*b/MCD(a,b);
+	}
+	
 	
 	
 	public static void main(String[] args) {

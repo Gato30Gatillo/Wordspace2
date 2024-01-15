@@ -11,6 +11,22 @@ public class ejerciciosRecursion {
 		}
 	}
 	
+	
+	public static int sumaNprimerosNumerosAux(int n, int acumulador) {
+		if(n==0) {
+			return acumulador;
+		}
+		else {
+			return sumaNprimerosNumerosAux(n-1,n+acumulador);
+		}
+	}
+	
+	public static int sumaNprimerosNumerosMejorado(int n) {
+		return sumaNprimerosNumerosAux(n,0);
+	}
+	
+	
+	
 	public static String imprimirNprimerosNumeros(int n) {
 		if(n==1) {
 			return "1";
@@ -67,6 +83,61 @@ public class ejerciciosRecursion {
 			
 		}
 	}
+	
+	private static int reverseNumberAux(int number, int result) {
+		
+		int digit=0;
+		
+		if (number==0) {
+			 
+			return result;
+		 
+		}
+		 else {
+			 
+			digit=number%10;
+			result = digit+result*10; 
+			number=number/10; 
+			
+			 return reverseNumberAux(number,result);	 
+		 }
+		
+	}
+	
+	
+	public static int reverseNumber(int number) {
+		
+		return reverseNumberAux(number,1);
+	}
+	
+	static int terminoFibonacchi(int n) {
+		if (n==0) {
+			return 1;
+		}
+		else if(n==1) {
+			return terminoFibonacchi(n-1);
+		}
+		else {
+			return terminoFibonacchi(n-1)+terminoFibonacchi(n-2);
+		}
+	}
+	
+	 private static int terminoFibonacchiAux(int n) {
+		if (n==0) {
+			return 1;
+		}
+		else if(n==1) {
+			return terminoFibonacchi(n-1);
+		}
+		else {
+			return terminoFibonacchi(n-1)+terminoFibonacchi(n-2);
+		}
+	}
+	
+	public static int terminoFibonacchiMejorado(int n) {
+		return terminoFibonacchiAux(1);
+	}
+	
 	
 	
 	public static void main(String[] args) {
